@@ -18,23 +18,29 @@ Estrutura do Projeto
 
 A estrutura do projeto é organizada da seguinte forma:
 
-/projeto-login-java/
-├── src/
-│   └── main/
-│       └── java/
-│           └── com/
-│               └── projeto/
-│                   ├── DAO/
-│                   │   ├── Conexão.java         # Classe para conectar ao banco de dados
-│                   │   └── ConexLogin.java      # Classe de login que valida as credenciais
-│                   ├── DTO/
-│                   │   └── TesteConexão.java   # Classe de dados para o login
-│                   └── View/
-│                       └── TelaLogin.java      # Tela de login (interface gráfica)
-├── lib/                         # Bibliotecas externas (driver JDBC do MySQL)
-├── README.md                    # Este arquivo
-└── BancoRevisao.sql              # Script para criar e popular o banco de dados
+O projeto está dividido em três pacotes principais:
 
+DAO: Contém as classes responsáveis pela conexão com o banco de dados e pelas operações de login.
+
+Conexão.java: Classe que realiza a conexão com o banco MySQL usando JDBC.
+
+ConexLogin.java: Classe que faz a validação do login consultando o banco.
+
+DTO: Contém a classe que representa os dados do usuário para login.
+
+TesteConexão.java: Classe que armazena o nome do usuário e a senha fornecidos na tela de login.
+
+View: Contém a interface gráfica da aplicação.
+
+TelaLogin.java: Tela de login construída com Swing que permite o usuário inserir nome e senha e acionar o login.
+
+Além disso, o projeto possui:
+
+Uma pasta para bibliotecas externas (lib/), onde deve ser colocado o driver JDBC do MySQL.
+
+Um arquivo SQL (BancoRevisao.sql) que cria o banco de dados, a tabela de usuários e já insere um usuário para teste.
+
+O arquivo README.md que documenta o projeto.
 Requisitos
 
 Java JDK 8 ou superior
